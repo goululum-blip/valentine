@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>💖 Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 400px;
+      position: relative;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background: #4CAF50;
+      color: white;
+      left: 40px;
+    }
+
+    #no {
+      background: #e91e63;
+      color: white;
+      right: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>Jeanne, veux-tu être ma Valentine ? 💕</h1>
+    <img src="lapin.jpg" alt="Lapin amoureux">
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClick()">💖 OUI</button>
+      <button id="no">❌ NON</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const card = document.getElementById("card");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 250;
+      const y = Math.random() * 100;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    function yesClick() {
+      card.innerHTML = `
+        <h1>🎉 YESSSSSSSSSSS 🎉</h1>
+        <img src="celebration.gif" alt="Victoire">
+        <p style="font-size:18px; color:#e91e63;">
+          Rendez-vous dans mes dm ahah (et à Rome) 💘
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
